@@ -4,7 +4,7 @@ import styles from './layout.module.css'
 import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = 'Adrian Grimm'
+const name = 'Star Wars'
 export const siteTitle = 'Next.js Star Wars Site'
 
 export default function Layout({ children, home }) {
@@ -26,14 +26,13 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className="header flex flex-col items-center">
-      {home ? (
+        {home ? (
           <>
             <Image
               priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              src="/images/sw-logo.png"
+              height={252}
+              width={2317}
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -44,10 +43,9 @@ export default function Layout({ children, home }) {
               <a>
                 <Image
                   priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
+                  src="/images/sw-logo.png"
+                  height={252}
+                  width={2317}
                   alt={name}
                 />
               </a>
@@ -60,6 +58,7 @@ export default function Layout({ children, home }) {
           </>
         )}
       </div>
+      <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
